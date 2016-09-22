@@ -1,6 +1,23 @@
 import { Component } from '@angular/core';
+import { Photo } from './photo';
+import { PhotoService } from './phpto.service';
+
 @Component({
 	selector: 'my-app',
-	template: '<h1>My Seconf dddFirst Angular App</h1>'
+	templateUrl: 'app/views/photosList.html',
+	providers: [PhotoService]
 })
-export class AppComponent { }
+export class AppComponent {
+
+	photos : Photo[];
+
+	constructor(private photoService: PhotoService) { }
+
+	getPhotos(): void {
+		this.photoService.getPhotos().then(photos => this.photos = photos);
+	}
+	ngOnInit(): void {
+		this.getPhotos();
+	}
+
+}
