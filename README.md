@@ -5,4 +5,4 @@ NodeJS and npm are required.
 2. lunch application run "npm start".
 3. and start to pray.
 
-*Notice: **All** steps are required.*
+*Notice:* **All** steps are required.
